@@ -10,7 +10,16 @@ public class Pet {
         this.name = name;
     }
 
+    public String getName(){
+        return name;
+    }
+
     public String speak(){
         return "Ayo what's good? I'm a mf animal of some kind.";
+    }
+
+    @Override
+    public String toString() {
+        return "Esta mascota se llama " + name;
     }
 }

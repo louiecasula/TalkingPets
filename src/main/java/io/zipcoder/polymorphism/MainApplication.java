@@ -1,9 +1,6 @@
 package io.zipcoder.polymorphism;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class MainApplication {
     static Scanner scan = new Scanner(System.in);
@@ -19,13 +16,25 @@ public class MainApplication {
             System.out.print("Que tipo de animal es? ");
             mascotas.put(animalCurrente, scan.nextLine());
         }
-        System.out.print(mascotas);
         // Iterate through keys, instantiate each pet.
-//        for (String k: mascotas.keySet()){
-//            if (mascotas.get(k).equals("Dog")){
-//                Dog
-//            }
-//        }
+        ArrayList<Pet> pets = new ArrayList<>();
+        for (String k: mascotas.keySet()){
+            if (mascotas.get(k).equals("Dog")){
+                pets.add(new Dog(k));
+            }
+            else if (mascotas.get(k).equals("Cat")){
+                pets.add(new Cat(k));
+            }
+            else if (mascotas.get(k).equals("Lizard")){
+                pets.add(new Lizard(k));
+            }
+            else {
+                pets.add(new Pet(k));
+            }
+        }
         // Print each one's name and what it says.
+        for (Pet current : pets) {
+            System.out.println(current.toString() + " y dice " + current.speak());
+        }
     }
 }

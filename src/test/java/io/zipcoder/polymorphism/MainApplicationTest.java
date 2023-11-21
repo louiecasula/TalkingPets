@@ -17,7 +17,7 @@ public class MainApplicationTest {
     public void testCatSpeak(){
         Cat kitty = new Cat();
 
-        String expected = "Mow! Purrr... I hate Mondays!";
+        String expected = "Mow! Purrr... I hate Mondays.";
 
         Assert.assertEquals(expected, kitty.speak());
     }
